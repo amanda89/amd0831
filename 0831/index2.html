@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function () {
+				if (xhr.readyState==4) {
+					//处理数据
+					alert(xhr.responseText);
+				}
+			}
+			xhr.open("POST","http://www.marrymin.com:8180/Ajax/Post");
+			
+			//创建参数
+			var formdata=new FormData();
+			
+			//添加参数append（key，value）
+			formdata.append("username","111");
+			formdata.append("password","222");
+			
+			xhr.send(formdata);
+			
+			
+		</script>
+		
+	</body>
+</html>
